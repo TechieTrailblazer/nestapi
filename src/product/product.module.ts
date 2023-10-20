@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
-import { ProductController } from './product.controller';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ProductModel } from './product.model';
+import { ProductModel, ProductSchema } from './product.model';
 
 @Module({
-	controllers: [ProductController],
 	imports: [
 		MongooseModule.forFeature([
 			{
-				name: 'Product',
-				schema: ProductModel,
+				name: 'Product', // Указываем имя модели, оно будет отображаться в базе данных
+				schema: ProductSchema, // Указываем схему для построения данных
 			},
 		]),
 	],

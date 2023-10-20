@@ -1,35 +1,33 @@
-import { prop } from '@typegoose/typegoose';
-import { TimeStamps, Base } from '@typegoose/typegoose/lib/defaultClasses';
-import { Types } from 'mongoose';
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 class ProductCharacteristic {
 	name: string;
 	value: string;
 }
-
-export class ProductModel extends TimeStamps implements Base {
-	@prop()
+@Schema({ collection: 'User', timestamps: true })
+export class ProductModel extends Document {
+	@Prop()
 	image: string;
-	@prop()
+	@Prop()
 	title: string;
-	@prop()
+	@Prop()
 	price: number;
-	@prop()
+	@Prop()
 	oldPrice: number;
-	@prop()
+	@Prop()
 	credit: number;
-	@prop()
+	@Prop()
 	calculatedRating: number;
-	@prop()
+	@Prop()
 	description: string;
-	@prop()
+	@Prop()
 	advantages: string;
-	@prop()
+	@Prop()
 	disAdvantages: string;
-	@prop({ type: () => [String] })
+	@Prop({ type: () => [String] })
 	categories: string[];
 	tags: string;
 	characteristics: ProductCharacteristic[];
-	_id: Types.ObjectId;
-	id: string;
 }
+export const ProductSchema = SchemaFactory.createForClass(ProductModel);
