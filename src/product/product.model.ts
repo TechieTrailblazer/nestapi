@@ -5,7 +5,7 @@ class ProductCharacteristic {
 	name: string;
 	value: string;
 }
-@Schema({ collection: 'User', timestamps: true })
+@Schema({ collection: 'Product', timestamps: true })
 export class ProductModel extends Document {
 	@Prop()
 	image: string;

@@ -6,7 +6,7 @@ import { UserModel, UserSchema } from './user.model';
 	imports: [
 		MongooseModule.forFeature([
 			{
-				name: UserModel.name, // Указываем имя модели, оно будет отображаться в базе данных
+				name: 'User', // Указываем имя модели, оно будет отображаться в базе данных
 				schema: UserSchema, // Указываем схему для построения данных
 			},
 		]),

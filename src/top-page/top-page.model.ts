@@ -25,7 +25,7 @@ export class TopPageAdvantage {
 	description: string;
 }
 
-@Schema({ collection: 'User', timestamps: true })
+@Schema({ collection: 'TopPage', timestamps: true })
 export class TopPageModel extends Document {
 	@Prop({ enum: TopLevelCategory })
 	firstCategory: TopLevelCategory;
