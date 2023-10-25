@@ -14,6 +14,6 @@ export class ReviewModel extends Document {
 	@Prop()
 	createdAt: Date;
 	@Prop()
-	productId: Types.ObjectId;
+	productId: string;
 }
 export const ReviewSchema = SchemaFactory.createForClass(ReviewModel);
